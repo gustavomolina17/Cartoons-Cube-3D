@@ -1,0 +1,115 @@
+body {
+  background: repeating-conic-gradient(black 0, blue 45deg);
+  background-size: 2em, 2em;
+  transition: 3s;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 999;
+  display: inline-block;
+  transition: 5s;
+  animation: rotate 12s infinite linear forwards;
+}
+
+.cubePart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 2s;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+}
+
+@keyframes rotate {
+  20% {
+    transform: rotateX(-90deg) rotateY(90deg);
+  }
+
+  60% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+  80% {
+    transform: rotateX(-30deg) rotateY(20deg);
+  }
+}
+
+.top {
+  background: url("https://coletivonerd.com.br/wp-content/uploads/2019/10/ezgif-3-9b0570b2dbd9.png");
+  background-position: cover;
+  background-position: center;
+  background-size: cover;
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  background: url("https://http2.mlstatic.com/D_NQ_NP_841699-MLB40202140097_122019-O.jpg");
+  background-position: cover;
+  background-position: center;
+  background-size: cover;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.cube:active .top {
+  transform: rotateX(-90deg) translateZ(105px);
+}
+.cube:active .bottom {
+  transform: rotateX(90deg) translateZ(105px);
+}
+.cube:active .left {
+  transform: rotateY(90deg) translateZ(105px);
+}
+.cube:active .right {
+  transform: rotateY(-90deg) translateZ(105px);
+}
+.cube:active .back {
+  transform: rotateY(0deg) translateZ(105px);
+}
+.cube:active .front {
+  transform: rotateY(-180deg) translateZ(105px);
+}
+.cube:active .cubePart {
+  filter: invert(1);
+}
+.left {
+  background: url("https://files.nsctotal.com.br/s3fs-public/styles/itapema_blog_post_header/public/2019-12/homer.jpg?_t1iu.VfcblHrxTOUA5fTcAtYuubB_4Y&itok=zOp3Twln");
+  background-position: cover;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.right {
+  background: url("https://media.semprefamilia.com.br/semprefamilia/2018/04/planeta-12ee2990.jpg");
+  background-position: cover;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(90deg) translateZ(100px);
+}
+.front {
+  background: url("https://1.bp.blogspot.com/-pzStdOQRGn8/XRrA8yD5ksI/AAAAAAAAaa0/dsLz9cEPMVEoD4fsYN3TW9TyvxJd3exvQCLcBGAs/s640/freakzoid-wall.jpg");
+  background-position: cover;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(0deg) translateZ(100px);
+}
+.back {
+  background: url("http://s2.glbimg.com/EGRpyQIo54R2opExqCU2B8bYrkM=/0x0:1024x767/695x521/s.glbimg.com/po/tt2/f/original/2014/03/21/yugioh.jpg");
+  background-position: cover;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(-180deg) translateZ(100px);
+}
+/* .cube:hover .top, .cube:hover .bottom{
+  transform: translateZ(200px)
+} */
